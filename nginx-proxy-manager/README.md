@@ -13,9 +13,10 @@
        - ./data:/data
        - ./letsencrypt:/etc/letsencrypt
 ```
-	  
+
+```   
 docker-compose up -d
+```
 
-Email:    admin@example.com
-
-Password: changeme	  
+#### Email:    admin@example.com
+#### Password: changeme	  
