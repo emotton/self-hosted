@@ -1,5 +1,6 @@
 # nginx proxy manager
 
+```
 services:
   app:
     image: 'jc21/nginx-proxy-manager:latest'
@@ -11,9 +12,11 @@ services:
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
-	  
+```
+
+```   
 docker-compose up -d
+```
 
-Email:    admin@example.com
-
-Password: changeme	  
+#### Email:    admin@example.com
+#### Password: changeme	  
