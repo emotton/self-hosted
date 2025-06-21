@@ -1,0 +1,12 @@
+version: "3"
+services:
+  pg10:
+    image: postgres:10
+    container_name: postgres10
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: senha
+    ports:
+      - 5433:5432
+    volumes:
+      - ./db:/var/lib/postgresql/data
