@@ -1,36 +1,20 @@
-version: '3.8'
+version: "3.8"
 
 services:
   minio:
-    image: quay.io/minio/minio
-    command: server /data --console-address ":9001"
+    image: minio/minio:RELEASE.2023-12-23T07-19-11Z
     container_name: minio
+    platform: linux/amd64
+    restart: unless-stopped
     ports:
       - "9000:9000"
       - "9001:9001"
     environment:
-      MINIO_ROOT_USER: administrador
-      MINIO_ROOT_PASSWORD: senha
-      MINIO_BROWSER_REDIRECT_URL: https://console.seudominio.com
-      MINIO_SERVER_URL: https://s3.seudominio.com
+      MINIO_ROOT_USER: admin
+      MINIO_ROOT_PASSWORD: admin123
     volumes:
-      - minio_data:/data
-    networks:
-      - npm_public
-    deploy:
-      mode: replicated
-      replicas: 1
-      placement:
-        constraints:
-          - node.role == manager
-      resources:
-        limits:
-          memory: 4G
+      - minio-data:/data
+    command: server --address ":9000" --console-address ":9001" /data
 
 volumes:
-  minio_data:
-    external: true
-
-networks:
-  npm_public:
-    external: true
+  minio-data:
