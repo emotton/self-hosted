@@ -6,13 +6,13 @@ services:
     environment:
       BASEROW_PUBLIC_URL: 'https://baserow-contabo.sao-pio-tech.com'
       EMAIL_SMTP: true
-      EMAIL_SMTP_HOST: smtp.gmail.com
-      EMAIL_SMTP_PORT: 587
-      EMAIL_SMTP_USER: emotton@gmail.com
-      EMAIL_SMTP_PASSWORD: <senha de app>
+      EMAIL_SMTP_HOST: "smtp.gmail.com"
+      EMAIL_SMTP_PORT: "587"
+      EMAIL_SMTP_USER: "emotton@gmail.com"
+      EMAIL_SMTP_PASSWORD: "<senha de APP>"
       EMAIL_SMTP_USE_TLS: true
-      EMAIL_SMTP_USE_SSL: false
-      FROM_EMAIL: 'emotton@gmail.com'
+      FROM_EMAIL: "emotton@gmail.com"
+
     ports:
       - "8765:80"
       - "2443:443"
